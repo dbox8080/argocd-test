@@ -44,7 +44,7 @@
                     "version": "v1"
                 },
                 "name": "example",
-                "replicas": 1
+                "replicas": 5
             }
         ]
     }
