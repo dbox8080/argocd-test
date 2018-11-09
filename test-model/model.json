@@ -13,36 +13,38 @@
         "oauth_secret": "oauth-secret",
         "predictors": [
             {
-                "componentSpecs": [{
-                    "spec": {
-                        "containers": [
-                            {
-                                "image": "seldonio/mock_classifier:1.0",
-                                "imagePullPolicy": "IfNotPresent",
-                                "name": "classifier",
-                                "resources": {
-                                    "requests": {
-                                        "memory": "1Mi"
+                "componentSpecs": [
+                    {
+                        "spec": {
+                            "containers": [
+                                {
+                                    "image": "seldonio/mock_classifier:1.0",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "name": "classifier",
+                                    "resources": {
+                                        "requests": {
+                                            "memory": "1Mi"
+                                        }
                                     }
                                 }
-                            }
-                        ],
-                        "terminationGracePeriodSeconds": 1
+                            ],
+                            "terminationGracePeriodSeconds": 1
+                        }
                     }
-                }],
+                ],
                 "graph": {
                     "children": [],
-                    "name": "classifier",
                     "endpoint": {
-			"type" : "REST"
-		    },
+                        "type": "REST"
+                    },
+                    "name": "classifier",
                     "type": "MODEL"
                 },
+                "labels": {
+                    "version": "v1"
+                },
                 "name": "example",
-                "replicas": 1,
-		"labels": {
-		    "version" : "v1"
-		}
+                "replicas": 5
             }
         ]
     }
